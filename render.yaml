@@ -1,0 +1,71 @@
+services:
+  - type: web
+    name: caltodo-api
+    runtime: node
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PORT
+        value: 3000
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: CANVAS_BASE_URL
+        value: https://bcourses.berkeley.edu
+      - key: CANVAS_ACCESS_TOKEN
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
+      - key: TASK_LIST_NAME
+        value: Berkeley Deadlines
+      - key: DELETE_MODE
+        value: delete
+      - key: HIDE_PAST_DUE
+        value: true
+      - key: INTERNAL_SCHEDULER_ENABLED
+        value: false
+
+  - type: cron
+    name: caltodo-weekly-sync
+    runtime: node
+    plan: starter
+    schedule: "0 2 * * 1"
+    buildCommand: npm ci && npm run build
+    startCommand: npm run sync:once
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: CANVAS_BASE_URL
+        value: https://bcourses.berkeley.edu
+      - key: CANVAS_ACCESS_TOKEN
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
+      - key: TASK_LIST_NAME
+        value: Berkeley Deadlines
+      - key: DELETE_MODE
+        value: delete
+      - key: HIDE_PAST_DUE
+        value: true
