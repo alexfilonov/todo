@@ -68,6 +68,27 @@ Then reconnect Google using:
 
 - `{PUBLIC_BASE_URL}/api/auth/google/start`
 
+## Frontend (Next.js)
+
+A simple dashboard UI is available in `/frontend`.
+
+Local run:
+
+```bash
+cd frontend
+npm install
+cp .env.example .env.local
+# set BACKEND_BASE_URL and BACKEND_ADMIN_TOKEN
+npm run dev
+```
+
+Recommended deploy:
+
+- Deploy `/frontend` to Vercel.
+- Set env vars in Vercel:
+  - `BACKEND_BASE_URL` (e.g. `https://caltodo-api.onrender.com`)
+  - `BACKEND_ADMIN_TOKEN` (same value as backend `ADMIN_TOKEN`)
+
 ## Canvas auth modes
 
 ### Recommended (student-friendly): Personal Access Token

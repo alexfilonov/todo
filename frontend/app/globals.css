@@ -1,0 +1,99 @@
+:root {
+  --bg: #f7f3ec;
+  --panel: #fffdf9;
+  --text: #1a1a1a;
+  --muted: #6b5f54;
+  --accent: #0b6a52;
+  --accent-2: #094b3b;
+  --danger: #b42318;
+  --border: #e7dfd4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top right, #efe7d8 0%, var(--bg) 45%);
+  color: var(--text);
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--accent-2);
+}
+
+.button.danger {
+  background: var(--danger);
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  background: #fff;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.small {
+  font-size: 0.9rem;
+}
