@@ -62,7 +62,7 @@ export const config = {
     | "complete",
   defaultHidePastDue: parseBoolEnv("HIDE_PAST_DUE", true),
   internalSchedulerEnabled: parseBoolEnv("INTERNAL_SCHEDULER_ENABLED", true),
-  adminToken: process.env.ADMIN_TOKEN ?? "",
+  adminToken: process.env.ADMIN_TOKEN?.trim() ?? "",
 };
 
 export const canvasOAuthEnabled = Boolean(config.canvasClientId && config.canvasClientSecret);
