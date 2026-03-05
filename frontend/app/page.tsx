@@ -47,8 +47,15 @@ export default async function Page() {
   return (
     <main className="grid" style={{ gap: 16 }}>
       <div className="card grid" style={{ gap: 10 }}>
-        <h1>Caltodo Dashboard</h1>
-        <p className="muted">Hosted monitor for Canvas to Google Tasks sync.</p>
+        <div className="row">
+          <div className="grid" style={{ gap: 6 }}>
+            <h1>Caltodo Dashboard</h1>
+            <p className="muted">Hosted monitor for Canvas to Google Tasks sync.</p>
+          </div>
+          <form method="POST" action="/api/auth/logout">
+            <button className="button danger" type="submit">Sign out</button>
+          </form>
+        </div>
       </div>
 
       <div className="grid cols-2">

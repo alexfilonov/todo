@@ -88,6 +88,8 @@ Recommended deploy:
 - Set env vars in Vercel:
   - `BACKEND_BASE_URL` (e.g. `https://caltodo-api.onrender.com`)
   - `BACKEND_ADMIN_TOKEN` (same value as backend `ADMIN_TOKEN`)
+  - `FRONTEND_AUTH_PASSWORD` (dashboard login password)
+  - `FRONTEND_AUTH_SECRET` (random secret used to sign auth session cookie)
 
 ## Canvas auth modes
 
