@@ -1,4 +1,4 @@
-# Caltodo MVP (Canvas -> Google Tasks)
+# Deadline Aggregate
 
 Single-user backend service that syncs UC Berkeley Canvas assignment deadlines (including Gradescope-linked Canvas assignments) into Google Tasks.
 
